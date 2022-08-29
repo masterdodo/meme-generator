@@ -1,0 +1,21 @@
+.Header {
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    display: flex;
+    align-items: center;
+    height: 60px;
+    color: white;
+}
+
+.header--logo {
+    height: 100%;
+    padding: 5px;
+}
+
+.header--title {
+    margin-right: auto;
+}
+
+.header--text {
+    margin-right: 15px;
+    font-size: 16px;
+}

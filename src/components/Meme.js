@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Meme() {
+export default function Meme(props) {
     const [meme, setMeme] = React.useState({
         topText: "",
         bottomText: "",
@@ -8,6 +8,10 @@ export default function Meme() {
     })
 
     const [allMemeImages, setAllMemeImages] = React.useState()
+
+    const styles = {}
+    styles.backgroundColor = props.darkMode ? "#444" : "#FFF";
+    styles.color = props.darkMode ? "#FFF" : "#000";
 
     React.useEffect(() => {
         fetch("https://api.imgflip.com/get_memes")
@@ -30,8 +34,8 @@ export default function Meme() {
     return (
         <section className="MemeInput">
             <div className="meme-input--form">
-                <input className="meme-input--field" type="text" name="topText" id="topText" placeholder="Top Text" onChange={handleFormData} value={meme.topText} />
-                <input className="meme-input--field" type="text" name="bottomText" id="bottomText" placeholder="Bottom Text" onChange={handleFormData} value={meme.bottomText} />
+                <input className="meme-input--field" style={styles} type="text" name="topText" id="topText" placeholder="Top Text" onChange={handleFormData} value={meme.topText} />
+                <input className="meme-input--field" style={styles} type="text" name="bottomText" id="bottomText" placeholder="Bottom Text" onChange={handleFormData} value={meme.bottomText} />
                 <button className="meme-input--button" onClick={handleClick}>Get a new meme image 🖼️</button>
             </div>
             <div className="meme-input--meme-wrapper">

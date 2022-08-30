@@ -19,3 +19,12 @@
     margin-right: 15px;
     font-size: 16px;
 }
+
+.header--toggle {
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #000 1.18%, #555 100%);
+    color: white;
+    margin-right: 10px;
+    cursor: pointer;
+}
